@@ -10,4 +10,6 @@
 
 @interface TFDocument : NSDocument
 
+@property (strong) NSAttributedString *documentContents;
+
 @end
