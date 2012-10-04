@@ -27,6 +27,10 @@
     return self;
 }
 
+- (void)awakeFromNib {
+    [_textField textStorage].delegate = self;
+}
+
 - (NSString *)windowNibName
 {
 	// Override returning the nib file name of the document
@@ -45,6 +49,53 @@
     return YES;
 }
 
+- (BOOL)replateTokensInString:(NSMutableAttributedString *)string {
+    
+    NSError *error = nil;
+    
+    NSRegularExpression *logicalMatch = [NSRegularExpression regularExpressionWithPattern:@"\\{\%[\\w\\d\\s.-|]*%\\}"
+                                                                                  options:NSRegularExpressionCaseInsensitive|NSRegularExpressionDotMatchesLineSeparators
+                                                                                    error:&error];
+    
+	NSString *documentAsString = [string string];
+    
+	NSArray *matches = [logicalMatch matchesInString:documentAsString options:0 range:NSMakeRange(0, [documentAsString length])];
+    
+	[matches enumerateObjectsWithOptions:NSEnumerationReverse usingBlock:^(NSTextCheckingResult *obj, NSUInteger idx, BOOL *stop) {
+		NSTextAttachment *attachment = [[NSTextAttachment alloc] initWithFileWrapper:nil];
+		TFTextElementAttachmentCell *cell = [[TFTextElementAttachmentCell alloc] init];
+		cell.element = [documentAsString substringWithRange:[obj range]];
+		NSLog(@"Found: %@", cell.element);
+		cell.font = _textField.font;
+		[attachment setAttachmentCell:cell];
+		NSAttributedString *element = [NSMutableAttributedString attributedStringWithAttachment:attachment];
+        
+		[string replaceCharactersInRange:[obj range] withAttributedString:element];
+	}];
+    
+	documentAsString = [string string];
+    
+	NSRegularExpression *printMatch = [NSRegularExpression regularExpressionWithPattern:@"\\{\\{[\\w\\d\\s.-|:\"']*\\}\\}"
+                                                                                options:NSRegularExpressionCaseInsensitive|NSRegularExpressionDotMatchesLineSeparators
+                                                                                  error:&error];
+    
+	matches = [printMatch matchesInString:documentAsString options:0 range:NSMakeRange(0, [documentAsString length])];
+    
+	[matches enumerateObjectsWithOptions:NSEnumerationReverse usingBlock:^(NSTextCheckingResult *obj, NSUInteger idx, BOOL *stop) {
+		NSTextAttachment *attachment = [[NSTextAttachment alloc] initWithFileWrapper:nil];
+		TFTextElementAttachmentCell *cell = [[TFTextElementAttachmentCell alloc] init];
+		cell.element = [documentAsString substringWithRange:[obj range]];
+		NSLog(@"Found: %@", cell.element);
+		cell.font = _textField.font;
+		[attachment setAttachmentCell:cell];
+		NSAttributedString *element = [NSMutableAttributedString attributedStringWithAttachment:attachment];
+        
+		[string replaceCharactersInRange:[obj range] withAttributedString:element];
+	}];
+    
+    return YES;
+}
+
 - (NSData *)dataOfType:(NSString *)typeName error:(NSError **)outError
 {
 	NSMutableAttributedString *s = [self.documentContents mutableCopy];
@@ -57,8 +108,8 @@
 	NSLog(@"%@", [self.documentContents string]);
 	// Insert code here to write your document to data of the specified type. If outError != NULL, ensure that you create and set an appropriate error when returning nil.
 	// You can also choose to override -fileWrapperOfType:error:, -writeToURL:ofType:error:, or -writeToURL:ofType:forSaveOperation:originalContentsURL:error: instead.
-	NSException *exception = [NSException exceptionWithName:@"UnimplementedMethod" reason:[NSString stringWithFormat:@"%@ is unimplemented", NSStringFromSelector(_cmd)] userInfo:nil];
-	@throw exception;
+//	NSException *exception = [NSException exceptionWithName:@"UnimplementedMethod" reason:[NSString stringWithFormat:@"%@ is unimplemented", NSStringFromSelector(_cmd)] userInfo:nil];
+//	@throw exception;
 	return nil;
 }
 
@@ -68,54 +119,30 @@
 	NSDictionary *options = @{NSDocumentTypeDocumentAttribute : NSPlainTextDocumentType};
 	NSMutableAttributedString *documentData = [[NSMutableAttributedString alloc] initWithData:data options:options documentAttributes:nil error:&error];
 
-	NSRegularExpression *logicalMatch = [NSRegularExpression regularExpressionWithPattern:@"\\{\%[\\w\\d\\s.-|]*%\\}"
-																		   options:NSRegularExpressionCaseInsensitive|NSRegularExpressionDotMatchesLineSeparators
-																			 error:&error];
-
-	NSString *documentAsString = [documentData string];
-
-	NSArray *matches = [logicalMatch matchesInString:documentAsString options:0 range:NSMakeRange(0, [documentAsString length])];
-
-	[matches enumerateObjectsWithOptions:NSEnumerationReverse usingBlock:^(NSTextCheckingResult *obj, NSUInteger idx, BOOL *stop) {
-		NSTextAttachment *attachment = [[NSTextAttachment alloc] initWithFileWrapper:nil];
-		TFTextElementAttachmentCell *cell = [[TFTextElementAttachmentCell alloc] init];
-		cell.element = [documentAsString substringWithRange:[obj range]];
-		NSLog(@"Found: %@", cell.element);
-		cell.font = _textField.font;
-		[attachment setAttachmentCell:cell];
-		NSAttributedString *element = [NSMutableAttributedString attributedStringWithAttachment:attachment];
-
-		[documentData replaceCharactersInRange:[obj range] withAttributedString:element];
-	}];
-
-//	[logicalMatch enumerateMatchesInString:documentAsString options:0 range:NSMakeRange(0, [documentAsString length]) usingBlock:^(NSTextCheckingResult *match, NSMatchingFlags flags, BOOL *stop){
-//		NSString *s = [documentAsString substringWithRange:[match range]];
-//		NSLog(@"Found: %@", s);
-//	}];
-
-	documentAsString = [documentData string];
-
-	NSRegularExpression *printMatch = [NSRegularExpression regularExpressionWithPattern:@"\\{\\{[\\w\\d\\s.-|:\"']*\\}\\}"
-																				  options:NSRegularExpressionCaseInsensitive|NSRegularExpressionDotMatchesLineSeparators
-																					error:&error];
-
-	matches = [printMatch matchesInString:documentAsString options:0 range:NSMakeRange(0, [documentAsString length])];
-
-	[matches enumerateObjectsWithOptions:NSEnumerationReverse usingBlock:^(NSTextCheckingResult *obj, NSUInteger idx, BOOL *stop) {
-		NSTextAttachment *attachment = [[NSTextAttachment alloc] initWithFileWrapper:nil];
-		TFTextElementAttachmentCell *cell = [[TFTextElementAttachmentCell alloc] init];
-		cell.element = [documentAsString substringWithRange:[obj range]];
-		NSLog(@"Found: %@", cell.element);
-		cell.font = _textField.font;
-		[attachment setAttachmentCell:cell];
-		NSAttributedString *element = [NSMutableAttributedString attributedStringWithAttachment:attachment];
-
-		[documentData replaceCharactersInRange:[obj range] withAttributedString:element];
-	}];
-
+    [self replateTokensInString:documentData];
 
 	self.documentContents = documentData;
 	return YES;
+}
+
+NSString *TFTemplatMarkupPboardType = @"com.wannabegeek.TemplateMarkup";
+
+- (NSArray *)textView:(NSTextView *)aTextView writablePasteboardTypesForCell:(id <NSTextAttachmentCell>)cell atIndex:(NSUInteger)charIndex {
+    return [NSArray arrayWithObject:TFTemplatMarkupPboardType];
+}
+
+- (BOOL)textView:(NSTextView *)aTextView writeCell:(id <NSTextAttachmentCell>)cell atIndex:(NSUInteger)charIndex toPasteboard:(NSPasteboard *)pboard type:(NSString *)type {
+    if (type == TFTemplatMarkupPboardType) {
+        [pboard writeObjects:[NSArray arrayWithObject:((TFTextElementAttachmentCell *)cell).element]];
+    }
+    
+    return YES;
+}
+
+- (void)textStorageWillProcessEditing:(NSNotification *)note {
+    NSTextStorage *text = note.object;
+
+    [self replateTokensInString:text];
 }
 
 @end

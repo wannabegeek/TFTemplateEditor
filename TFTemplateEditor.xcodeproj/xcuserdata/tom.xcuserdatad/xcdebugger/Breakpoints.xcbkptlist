@@ -8,24 +8,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "TemplateEditor/TFDocument.m"
-         timestampString = "370940993.438798"
+         timestampString = "370951047.088961"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "60"
-         endingLineNumber = "60"
-         landmarkName = "-dataOfType:error:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "Yes"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "TemplateEditor/TFDocument.m"
-         timestampString = "370940993.438798"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "52"
-         endingLineNumber = "52"
+         startingLineNumber = "111"
+         endingLineNumber = "111"
          landmarkName = "-dataOfType:error:"
          landmarkType = "5">
       </FileBreakpoint>
