@@ -8,7 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface TFDocument : NSDocument <NSTextStorageDelegate>
+@interface TFDocument : NSDocument <NSTextStorageDelegate, NSTextViewDelegate>
 
 @property (strong) NSAttributedString *documentContents;
 

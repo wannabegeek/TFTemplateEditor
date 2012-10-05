@@ -101,7 +101,7 @@
 	NSMutableAttributedString *s = [self.documentContents mutableCopy];
 	[s enumerateAttribute:NSAttachmentAttributeName inRange:NSMakeRange(0, s.length) options:NSAttributedStringEnumerationReverse|NSAttributedStringEnumerationLongestEffectiveRangeNotRequired usingBlock:^(id value, NSRange range, BOOL *stop) {
 		NSAttributedString *b = [s attributedSubstringFromRange:range];
-		[s replaceCharactersInRange:range withAttributedString:((TFTextElementAttachmentCell *)value)];
+//		[s replaceCharactersInRange:range withAttributedString:((TFTextElementAttachmentCell *)value)];
 //		NSLog(@"%@", [self.documentContents repl]);
 
 	}];
@@ -140,9 +140,24 @@ NSString *TFTemplatMarkupPboardType = @"com.wannabegeek.TemplateMarkup";
 }
 
 - (void)textStorageWillProcessEditing:(NSNotification *)note {
-    NSTextStorage *text = note.object;
+//    NSTextStorage *text = note.object;
+//	Syntax Highlighting goes here
+//    [self replateTokensInString:text];
+}
 
-    [self replateTokensInString:text];
+- (BOOL)textView:(NSTextView *)textView shouldChangeTextInRanges:(NSArray *)affectedRanges replacementStrings:(NSArray *)replacementStrings {
+	NSMutableArray *r = [NSMutableArray array];
+	for (NSValue *rangeValue in affectedRanges) {
+		NSRange range = [rangeValue rangeValue];
+		NSMutableAttributedString *s = [[_documentContents attributedSubstringFromRange:range] mutableCopy];
+		NSLog(@"Affected String '%@' {%ld, %ld}", s, range.location, range.length);
+		[self replateTokensInString:s];
+		[r addObject:s];
+	}
+
+	replacementStrings = [r copy];
+	NSLog(@"Text changing");
+	return YES;
 }
 
 @end
