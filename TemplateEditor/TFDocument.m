@@ -8,6 +8,7 @@
 
 #import "TFDocument.h"
 #import "TFTextElementAttachmentCell.h"
+#import "TFTemplateTextStorage.h"
 
 @interface TFDocument ()
 @property (strong) IBOutlet NSTextView *textField;
@@ -28,7 +29,8 @@
 }
 
 - (void)awakeFromNib {
-    [_textField textStorage].delegate = self;
+//	_textField.layoutManager.textStorage = [[TFTemplateTextStorage alloc] init];
+	_textField.textStorage.delegate = self;
 }
 
 - (NSString *)windowNibName
@@ -105,7 +107,7 @@
 //		NSLog(@"%@", [self.documentContents repl]);
 
 	}];
-	NSLog(@"%@", [self.documentContents string]);
+//	NSLog(@"%@", [self.documentContents string]);
 	// Insert code here to write your document to data of the specified type. If outError != NULL, ensure that you create and set an appropriate error when returning nil.
 	// You can also choose to override -fileWrapperOfType:error:, -writeToURL:ofType:error:, or -writeToURL:ofType:forSaveOperation:originalContentsURL:error: instead.
 //	NSException *exception = [NSException exceptionWithName:@"UnimplementedMethod" reason:[NSString stringWithFormat:@"%@ is unimplemented", NSStringFromSelector(_cmd)] userInfo:nil];
@@ -146,18 +148,18 @@ NSString *TFTemplatMarkupPboardType = @"com.wannabegeek.TemplateMarkup";
 }
 
 - (BOOL)textView:(NSTextView *)textView shouldChangeTextInRanges:(NSArray *)affectedRanges replacementStrings:(NSArray *)replacementStrings {
-	NSMutableArray *r = [NSMutableArray array];
-	for (NSValue *rangeValue in affectedRanges) {
+	NSMutableAttributedString *temp = [_documentContents mutableCopy];
+	[affectedRanges enumerateObjectsWithOptions:NSEnumerationReverse usingBlock:^(NSValue *rangeValue, NSUInteger idx, BOOL *stop) {
 		NSRange range = [rangeValue rangeValue];
-		NSMutableAttributedString *s = [[_documentContents attributedSubstringFromRange:range] mutableCopy];
-		NSLog(@"Affected String '%@' {%ld, %ld}", s, range.location, range.length);
+		NSMutableAttributedString *s = [[NSMutableAttributedString alloc] initWithString:[replacementStrings objectAtIndex:idx]];
+		NSLog(@"Affected String '%@' {%ld, %ld} to replace with '%@'", s, range.location, range.length, [replacementStrings objectAtIndex:idx]);
 		[self replateTokensInString:s];
-		[r addObject:s];
-	}
+		[temp replaceCharactersInRange:range withAttributedString:s];
+	}];
 
-	replacementStrings = [r copy];
 	NSLog(@"Text changing");
-	return YES;
+	_documentContents = temp;
+	return NO;
 }
 
 @end

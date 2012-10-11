@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E23FE0EC1626A6A6006E2EFC /* TFTemplateTextStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = E23FE0EB1626A6A6006E2EFC /* TFTemplateTextStorage.m */; };
 		E2EB996C161B69B0009DAB0A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2EB996B161B69B0009DAB0A /* Cocoa.framework */; };
 		E2EB9976161B69B0009DAB0A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E2EB9974161B69B0009DAB0A /* InfoPlist.strings */; };
 		E2EB9978161B69B0009DAB0A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EB9977161B69B0009DAB0A /* main.m */; };
@@ -18,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E23FE0EA1626A6A6006E2EFC /* TFTemplateTextStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFTemplateTextStorage.h; sourceTree = "<group>"; };
+		E23FE0EB1626A6A6006E2EFC /* TFTemplateTextStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFTemplateTextStorage.m; sourceTree = "<group>"; };
 		E2EB9967161B69B0009DAB0A /* TFTemplateEditor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TFTemplateEditor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2EB996B161B69B0009DAB0A /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		E2EB996E161B69B0009DAB0A /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -94,6 +97,8 @@
 				E2EB998B161B6F06009DAB0A /* TFTextElementAttachmentCell.h */,
 				E2EB998C161B6F06009DAB0A /* TFTextElementAttachmentCell.m */,
 				E2EB9972161B69B0009DAB0A /* Supporting Files */,
+				E23FE0EA1626A6A6006E2EFC /* TFTemplateTextStorage.h */,
+				E23FE0EB1626A6A6006E2EFC /* TFTemplateTextStorage.m */,
 			);
 			path = TemplateEditor;
 			sourceTree = "<group>";
@@ -179,6 +184,7 @@
 				E2EB9978161B69B0009DAB0A /* main.m in Sources */,
 				E2EB997F161B69B0009DAB0A /* TFDocument.m in Sources */,
 				E2EB998D161B6F06009DAB0A /* TFTextElementAttachmentCell.m in Sources */,
+				E23FE0EC1626A6A6006E2EFC /* TFTemplateTextStorage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
