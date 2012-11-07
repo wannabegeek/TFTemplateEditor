@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>TFMultilineComment</key>
+	<string>&lt;!--.*?--&gt;</string>
+	<key>TFSingleLineComment</key>
+	<string>//.*$</string>
+	<key>TFCommandStart</key>
+	<string>&lt;</string>
+	<key>TFCommandEnd</key>
+	<string>&gt;</string>
+	<key>TFString1Charactor</key>
+	<string>&quot;</string>
+	<key>TFString2Charactor</key>
+	<string>&apos;</string>
+	<key>keywords</key>
+	<array>
+		<string>\s*+?\S*?\s*+?=</string>
+	</array>
+</dict>
+</plist>

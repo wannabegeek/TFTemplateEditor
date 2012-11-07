@@ -1,0 +1,488 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E215AB0E1649417800C306C9 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E215AB0D1649417800C306C9 /* Cocoa.framework */; };
+		E215AB181649417800C306C9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E215AB161649417800C306C9 /* InfoPlist.strings */; };
+		E215AB1C1649417800C306C9 /* TFTemplateEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = E215AB1B1649417800C306C9 /* TFTemplateEditor.m */; };
+		E215AB241649417900C306C9 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E215AB231649417900C306C9 /* SenTestingKit.framework */; };
+		E215AB251649417900C306C9 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E215AB0D1649417800C306C9 /* Cocoa.framework */; };
+		E215AB281649417900C306C9 /* TFTemplateEditor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E215AB0A1649417800C306C9 /* TFTemplateEditor.framework */; };
+		E215AB2E1649417900C306C9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E215AB2C1649417900C306C9 /* InfoPlist.strings */; };
+		E215AB311649417900C306C9 /* TFTemplateEditorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E215AB301649417900C306C9 /* TFTemplateEditorTests.m */; };
+		E215AB50164941C400C306C9 /* TFTextElementAttachmentCell.h in Headers */ = {isa = PBXBuildFile; fileRef = E215AB3E164941C400C306C9 /* TFTextElementAttachmentCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E215AB51164941C400C306C9 /* TFTextElementAttachmentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E215AB3F164941C400C306C9 /* TFTextElementAttachmentCell.m */; };
+		E215AB5E164941C400C306C9 /* NSMutableAttributedString+TokenFields.h in Headers */ = {isa = PBXBuildFile; fileRef = E215AB4C164941C400C306C9 /* NSMutableAttributedString+TokenFields.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E215AB5F164941C400C306C9 /* NSMutableAttributedString+TokenFields.m in Sources */ = {isa = PBXBuildFile; fileRef = E215AB4D164941C400C306C9 /* NSMutableAttributedString+TokenFields.m */; };
+		E261FDD1164AC6FB00F7FDC9 /* TFCodeEditor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E261FDD0164AC6FB00F7FDC9 /* TFCodeEditor.framework */; };
+		E261FDD4164AC71300F7FDC9 /* TFTemplateCodeTextView.h in Headers */ = {isa = PBXBuildFile; fileRef = E261FDD2164AC71300F7FDC9 /* TFTemplateCodeTextView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E261FDD5164AC71300F7FDC9 /* TFTemplateCodeTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = E261FDD3164AC71300F7FDC9 /* TFTemplateCodeTextView.m */; };
+		E261FDD7164AC87300F7FDC9 /* TFTemplateEditor.h in Headers */ = {isa = PBXBuildFile; fileRef = E215AB1A1649417800C306C9 /* TFTemplateEditor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E261FDDE164AF30800F7FDC9 /* NSAttributedString+TokenFields.h in Headers */ = {isa = PBXBuildFile; fileRef = E261FDDC164AF30800F7FDC9 /* NSAttributedString+TokenFields.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E261FDDF164AF30800F7FDC9 /* NSAttributedString+TokenFields.m in Sources */ = {isa = PBXBuildFile; fileRef = E261FDDD164AF30800F7FDC9 /* NSAttributedString+TokenFields.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E215AB261649417900C306C9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E215AB001649417800C306C9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E215AB091649417800C306C9;
+			remoteInfo = TFTemplateEditor;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E215AB0A1649417800C306C9 /* TFTemplateEditor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TFTemplateEditor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E215AB0D1649417800C306C9 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		E215AB101649417800C306C9 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		E215AB111649417800C306C9 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		E215AB121649417800C306C9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		E215AB151649417800C306C9 /* TFTemplateEditor-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TFTemplateEditor-Info.plist"; sourceTree = "<group>"; };
+		E215AB171649417800C306C9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E215AB191649417800C306C9 /* TFTemplateEditor-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TFTemplateEditor-Prefix.pch"; sourceTree = "<group>"; };
+		E215AB1A1649417800C306C9 /* TFTemplateEditor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TFTemplateEditor.h; sourceTree = "<group>"; };
+		E215AB1B1649417800C306C9 /* TFTemplateEditor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TFTemplateEditor.m; sourceTree = "<group>"; };
+		E215AB221649417900C306C9 /* TFTemplateEditorTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TFTemplateEditorTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E215AB231649417900C306C9 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		E215AB2B1649417900C306C9 /* TFTemplateEditorTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TFTemplateEditorTests-Info.plist"; sourceTree = "<group>"; };
+		E215AB2D1649417900C306C9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E215AB2F1649417900C306C9 /* TFTemplateEditorTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TFTemplateEditorTests.h; sourceTree = "<group>"; };
+		E215AB301649417900C306C9 /* TFTemplateEditorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TFTemplateEditorTests.m; sourceTree = "<group>"; };
+		E215AB3E164941C400C306C9 /* TFTextElementAttachmentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFTextElementAttachmentCell.h; sourceTree = "<group>"; };
+		E215AB3F164941C400C306C9 /* TFTextElementAttachmentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFTextElementAttachmentCell.m; sourceTree = "<group>"; };
+		E215AB4C164941C400C306C9 /* NSMutableAttributedString+TokenFields.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableAttributedString+TokenFields.h"; sourceTree = "<group>"; };
+		E215AB4D164941C400C306C9 /* NSMutableAttributedString+TokenFields.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableAttributedString+TokenFields.m"; sourceTree = "<group>"; };
+		E261FDD0164AC6FB00F7FDC9 /* TFCodeEditor.framework */ = {isa = PBXFileReference; lastKnownFileType = file; name = TFCodeEditor.framework; path = ../TFCodeEditor/build/Release/TFCodeEditor.framework; sourceTree = "<group>"; };
+		E261FDD2164AC71300F7FDC9 /* TFTemplateCodeTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFTemplateCodeTextView.h; sourceTree = "<group>"; };
+		E261FDD3164AC71300F7FDC9 /* TFTemplateCodeTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFTemplateCodeTextView.m; sourceTree = "<group>"; };
+		E261FDDC164AF30800F7FDC9 /* NSAttributedString+TokenFields.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+TokenFields.h"; sourceTree = "<group>"; };
+		E261FDDD164AF30800F7FDC9 /* NSAttributedString+TokenFields.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+TokenFields.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E215AB061649417800C306C9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E261FDD1164AC6FB00F7FDC9 /* TFCodeEditor.framework in Frameworks */,
+				E215AB0E1649417800C306C9 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E215AB1E1649417900C306C9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E215AB241649417900C306C9 /* SenTestingKit.framework in Frameworks */,
+				E215AB251649417900C306C9 /* Cocoa.framework in Frameworks */,
+				E215AB281649417900C306C9 /* TFTemplateEditor.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E215AAFE1649417800C306C9 = {
+			isa = PBXGroup;
+			children = (
+				E215AB131649417800C306C9 /* TFTemplateEditor */,
+				E215AB291649417900C306C9 /* TFTemplateEditorTests */,
+				E215AB0C1649417800C306C9 /* Frameworks */,
+				E215AB0B1649417800C306C9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E215AB0B1649417800C306C9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E215AB0A1649417800C306C9 /* TFTemplateEditor.framework */,
+				E215AB221649417900C306C9 /* TFTemplateEditorTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E215AB0C1649417800C306C9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E261FDD0164AC6FB00F7FDC9 /* TFCodeEditor.framework */,
+				E215AB0D1649417800C306C9 /* Cocoa.framework */,
+				E215AB231649417900C306C9 /* SenTestingKit.framework */,
+				E215AB0F1649417800C306C9 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E215AB0F1649417800C306C9 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E215AB101649417800C306C9 /* AppKit.framework */,
+				E215AB111649417800C306C9 /* CoreData.framework */,
+				E215AB121649417800C306C9 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		E215AB131649417800C306C9 /* TFTemplateEditor */ = {
+			isa = PBXGroup;
+			children = (
+				E215AB1A1649417800C306C9 /* TFTemplateEditor.h */,
+				E215AB1B1649417800C306C9 /* TFTemplateEditor.m */,
+				E215AB3E164941C400C306C9 /* TFTextElementAttachmentCell.h */,
+				E215AB3F164941C400C306C9 /* TFTextElementAttachmentCell.m */,
+				E261FDDC164AF30800F7FDC9 /* NSAttributedString+TokenFields.h */,
+				E261FDDD164AF30800F7FDC9 /* NSAttributedString+TokenFields.m */,
+				E215AB4C164941C400C306C9 /* NSMutableAttributedString+TokenFields.h */,
+				E215AB4D164941C400C306C9 /* NSMutableAttributedString+TokenFields.m */,
+				E261FDD2164AC71300F7FDC9 /* TFTemplateCodeTextView.h */,
+				E261FDD3164AC71300F7FDC9 /* TFTemplateCodeTextView.m */,
+				E215AB141649417800C306C9 /* Supporting Files */,
+			);
+			path = TFTemplateEditor;
+			sourceTree = "<group>";
+		};
+		E215AB141649417800C306C9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E215AB151649417800C306C9 /* TFTemplateEditor-Info.plist */,
+				E215AB161649417800C306C9 /* InfoPlist.strings */,
+				E215AB191649417800C306C9 /* TFTemplateEditor-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E215AB291649417900C306C9 /* TFTemplateEditorTests */ = {
+			isa = PBXGroup;
+			children = (
+				E215AB2F1649417900C306C9 /* TFTemplateEditorTests.h */,
+				E215AB301649417900C306C9 /* TFTemplateEditorTests.m */,
+				E215AB2A1649417900C306C9 /* Supporting Files */,
+			);
+			path = TFTemplateEditorTests;
+			sourceTree = "<group>";
+		};
+		E215AB2A1649417900C306C9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E215AB2B1649417900C306C9 /* TFTemplateEditorTests-Info.plist */,
+				E215AB2C1649417900C306C9 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		E215AB071649417800C306C9 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E261FDD7164AC87300F7FDC9 /* TFTemplateEditor.h in Headers */,
+				E261FDD4164AC71300F7FDC9 /* TFTemplateCodeTextView.h in Headers */,
+				E215AB5E164941C400C306C9 /* NSMutableAttributedString+TokenFields.h in Headers */,
+				E261FDDE164AF30800F7FDC9 /* NSAttributedString+TokenFields.h in Headers */,
+				E215AB50164941C400C306C9 /* TFTextElementAttachmentCell.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		E215AB091649417800C306C9 /* TFTemplateEditor */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E215AB341649417900C306C9 /* Build configuration list for PBXNativeTarget "TFTemplateEditor" */;
+			buildPhases = (
+				E215AB051649417800C306C9 /* Sources */,
+				E215AB061649417800C306C9 /* Frameworks */,
+				E215AB071649417800C306C9 /* Headers */,
+				E215AB081649417800C306C9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TFTemplateEditor;
+			productName = TFTemplateEditor;
+			productReference = E215AB0A1649417800C306C9 /* TFTemplateEditor.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		E215AB211649417900C306C9 /* TFTemplateEditorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E215AB371649417900C306C9 /* Build configuration list for PBXNativeTarget "TFTemplateEditorTests" */;
+			buildPhases = (
+				E215AB1D1649417900C306C9 /* Sources */,
+				E215AB1E1649417900C306C9 /* Frameworks */,
+				E215AB1F1649417900C306C9 /* Resources */,
+				E215AB201649417900C306C9 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E215AB271649417900C306C9 /* PBXTargetDependency */,
+			);
+			name = TFTemplateEditorTests;
+			productName = TFTemplateEditorTests;
+			productReference = E215AB221649417900C306C9 /* TFTemplateEditorTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E215AB001649417800C306C9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = "Tom Fewster";
+			};
+			buildConfigurationList = E215AB031649417800C306C9 /* Build configuration list for PBXProject "TFTemplateEditor" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = E215AAFE1649417800C306C9;
+			productRefGroup = E215AB0B1649417800C306C9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E215AB091649417800C306C9 /* TFTemplateEditor */,
+				E215AB211649417900C306C9 /* TFTemplateEditorTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E215AB081649417800C306C9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E215AB181649417800C306C9 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E215AB1F1649417900C306C9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E215AB2E1649417900C306C9 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		E215AB201649417900C306C9 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E215AB051649417800C306C9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E215AB1C1649417800C306C9 /* TFTemplateEditor.m in Sources */,
+				E215AB51164941C400C306C9 /* TFTextElementAttachmentCell.m in Sources */,
+				E215AB5F164941C400C306C9 /* NSMutableAttributedString+TokenFields.m in Sources */,
+				E261FDD5164AC71300F7FDC9 /* TFTemplateCodeTextView.m in Sources */,
+				E261FDDF164AF30800F7FDC9 /* NSAttributedString+TokenFields.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E215AB1D1649417900C306C9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E215AB311649417900C306C9 /* TFTemplateEditorTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E215AB271649417900C306C9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E215AB091649417800C306C9 /* TFTemplateEditor */;
+			targetProxy = E215AB261649417900C306C9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E215AB161649417800C306C9 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E215AB171649417800C306C9 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		E215AB2C1649417900C306C9 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E215AB2D1649417900C306C9 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E215AB321649417900C306C9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		E215AB331649417900C306C9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		E215AB351649417900C306C9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TFTemplateEditor/TFTemplateEditor-Prefix.pch";
+				INFOPLIST_FILE = "TFTemplateEditor/TFTemplateEditor-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Debug;
+		};
+		E215AB361649417900C306C9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TFTemplateEditor/TFTemplateEditor-Prefix.pch";
+				INFOPLIST_FILE = "TFTemplateEditor/TFTemplateEditor-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Release;
+		};
+		E215AB381649417900C306C9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TFTemplateEditor/TFTemplateEditor-Prefix.pch";
+				INFOPLIST_FILE = "TFTemplateEditorTests/TFTemplateEditorTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		E215AB391649417900C306C9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TFTemplateEditor/TFTemplateEditor-Prefix.pch";
+				INFOPLIST_FILE = "TFTemplateEditorTests/TFTemplateEditorTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E215AB031649417800C306C9 /* Build configuration list for PBXProject "TFTemplateEditor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E215AB321649417900C306C9 /* Debug */,
+				E215AB331649417900C306C9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E215AB341649417900C306C9 /* Build configuration list for PBXNativeTarget "TFTemplateEditor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E215AB351649417900C306C9 /* Debug */,
+				E215AB361649417900C306C9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E215AB371649417900C306C9 /* Build configuration list for PBXNativeTarget "TFTemplateEditorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E215AB381649417900C306C9 /* Debug */,
+				E215AB391649417900C306C9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E215AB001649417800C306C9 /* Project object */;
+}
